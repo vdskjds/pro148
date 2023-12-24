@@ -1,0 +1,80 @@
+  <!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:white">
+
+    <a-camera position="0 8 15"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+
+      <a-asset-item id="cat" src="./models/cat/scene.gltf"></a-asset-item>      
+      <a-asset-item id="girl_speedsculpt" src="./models/girl_speedsculpt/scene.gltf"></a-asset-item>
+      <a-asset-item id="street_lamp (1)" src="./models/street_lamp (1)/scene.gltf"></a-asset-item>
+      <img id="bg" src="./images/sky.jpg">
+
+      <img id="bg" src="images\sky.png">
+
+    </a-assets>
+
+    <a-entity light="type: ambient; intensity: 0.4;"> </a-entity>
+
+    <a-entity light="type: directional; castShadow: true; intensity: 1; distance: 50; decay: 2; color:yellow" position="-100 18 20">
+      
+    <a-entity animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 60000"> <a-entity light="type: directional; castShadow: true; intensity: 1; distance: 50; decay: 2; color:yellow" position="-100 18 20"></a-entity> </a-entity>
+
+    <a-sky src="#bg"></a-sky>
+
+    <!-------------------------------------Lights in the scene----------------------------------------------->
+
+    <!--Ambient-->
+    <!--Add Code here-->
+
+
+    <!--Directional-->
+    <!--Add Code here-->
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+
+    <a-circle position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="#2E6F10">
+    </a-circle>
+
+    <!--------------------------------------GLTF Models----------------------------------------------------------->
+
+    <!--cat-->
+    <a-entity>
+      <a-entity position="-5 0 0" rotation="0 -45 0" scale="0.5 0.5 0.5" gltf-model="#cat" shadow="cast: true;">
+      </a-entity>
+    </a-entity>
+    
+    <!--Add Code here-->
+    <!--Girl-->
+    <a-entity>
+      <a-entity position="5 -0 0" rotation="0 30 0" scale="600 600 600" gltf-model="#girl_speedsculpt" shadow="cast: true;">
+      </a-entity>
+
+    </a-entity>
+
+
+    <!--street-lamp-->
+    <a-entity>
+      <a-entity position="-12 -1 0" rotation="0 -85 0" scale="2.5 2.5 2.5" gltf-model="#street_lamp (1)" shadow="cast: true;">
+      </a-entity>
+
+    </a-entity>
+
+
+      </a-entity>
+    
+    
+    <!--------------------------------------END----------------------------------------------------------->
+  </a-scene>
+</body>
+
+</html>
